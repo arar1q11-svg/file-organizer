@@ -59,12 +59,6 @@ dropZone.addEventListener('click', (event) => {
   if (event.target.closest('button')) return;
   fileInput.click();
 });
-dropZone.addEventListener('keydown', (event) => {
-  if (event.target !== dropZone || (event.key !== 'Enter' && event.key !== ' ')) return;
-  event.preventDefault();
-  fileInput.click();
-});
-
 for (const eventName of ['dragenter', 'dragover']) {
   dropZone.addEventListener(eventName, (event) => {
     event.preventDefault();
@@ -101,7 +95,7 @@ organizeButton.addEventListener('click', async () => {
     document.body.append(link);
     link.click();
     link.remove();
-    URL.revokeObjectURL(url);
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
     statusMessage.textContent = '정리된 ZIP 파일을 저장했어요. 원본 파일은 그대로예요.';
   } catch (error) {
     statusMessage.textContent = error instanceof Error
