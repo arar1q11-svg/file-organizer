@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://arar1q11-svg.github.io/file-organizer/sitemap.xml

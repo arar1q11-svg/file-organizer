@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="파일을 종류별 폴더로 정리해 ZIP으로 내려받으세요. 파일은 서버에 업로드되지 않고 내 브라우저에서 안전하게 처리됩니다."
+    />
+    <meta name="theme-color" content="#f6f7f4" />
+    <link rel="canonical" href="https://arar1q11-svg.github.io/file-organizer/" />
+    <link rel="icon" type="image/svg+xml" href="/file-organizer/favicon.svg" />
+    <title>파일정리 도우미 - 파일을 종류별로 한 번에 정리</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="파일정리 도우미 홈">
+          <span class="brand-icon" aria-hidden="true">정</span>
+          <span>파일정리 도우미</span>
+        </a>
+        <span class="privacy-label"><span aria-hidden="true">●</span> 파일은 내 기기에서만 처리돼요</span>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <span class="eyebrow">깔끔한 정리, 한 번에</span>
+          <h1 id="page-title">흩어진 파일을<br /><span>보기 좋게 정리해요.</span></h1>
+          <p class="hero-copy">
+            파일을 올리면 종류별 폴더로 나누고, 정리된 ZIP 파일로 만들어 드려요.
+            원본은 그대로 안전하게 보관됩니다.
+          </p>
+        </section>
+
+        <section class="organizer-card" aria-label="파일 정리">
+          <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="파일을 선택하거나 이곳에 끌어다 놓으세요">
+            <div class="upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M24 31V9m0 0-8 8m8-8 8 8M10 29v8a3 3 0 0 0 3 3h22a3 3 0 0 0 3-3v-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h2>정리할 파일을 여기에 놓아주세요</h2>
+            <p>또는 아래 버튼으로 파일을 선택할 수 있어요</p>
+            <button id="choose-files" class="button button-secondary" type="button">파일 선택하기</button>
+            <input id="file-input" type="file" multiple hidden />
+            <span class="drop-hint">파일은 업로드되지 않아요 · 최대 250MB</span>
+          </div>
+
+          <div id="file-panel" class="file-panel" hidden>
+            <div class="panel-heading">
+              <div>
+                <h2>정리할 파일 <span id="file-count" class="count-badge">0</span></h2>
+                <p id="file-summary" class="panel-subtitle"></p>
+              </div>
+              <button id="clear-files" class="text-button" type="button">모두 비우기</button>
+            </div>
+            <ul id="file-list" class="file-list" aria-label="선택한 파일 목록"></ul>
+            <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+            <button id="organize-files" class="button button-primary" type="button">
+              <span aria-hidden="true">✦</span> 파일 정리하고 ZIP 받기
+            </button>
+            <p class="original-note">정리본만 ZIP으로 저장돼요. 선택한 원본 파일은 이동하거나 삭제하지 않습니다.</p>
+          </div>
+        </section>
+
+        <section class="categories" aria-label="자동 분류 종류">
+          <p class="section-label">이렇게 분류해요</p>
+          <div class="category-list">
+            <span><span aria-hidden="true">▧</span> 사진</span>
+            <span><span aria-hidden="true">▷</span> 동영상</span>
+            <span><span aria-hidden="true">♫</span> 음악</span>
+            <span><span aria-hidden="true">▤</span> 문서</span>
+            <span><span aria-hidden="true">▱</span> 압축 파일</span>
+            <span><span aria-hidden="true">{ }</span> 코드</span>
+            <span><span aria-hidden="true">＋</span> 기타</span>
+          </div>
+        </section>
+
+        <section class="how-it-works" aria-label="이용 방법">
+          <div><span class="step-number">01</span><p><strong>파일을 선택해요</strong><br />여러 파일을 한 번에 추가할 수 있어요.</p></div>
+          <div><span class="step-number">02</span><p><strong>종류별로 자동 분류돼요</strong><br />사진, 문서 등 알맞은 폴더에 담아요.</p></div>
+          <div><span class="step-number">03</span><p><strong>ZIP으로 저장해요</strong><br />정리된 결과를 한 번에 내려받아요.</p></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>파일정리 도우미</span>
+        <span>개인정보 보호를 위해 파일은 브라우저 안에서만 처리합니다.</span>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
